@@ -22,7 +22,8 @@ vendor_info = VendorDescriptor(
     device_name="cuda",
     device_query_cmd="brsmi",
     dispatch_key="PrivateUse1",
-    triton_extra_name=None,
+    triton_extra_name="supa",  # tl.extra.supa...
+    fp64_enabled=False,
 )
 
 CUSTOMIZED_UNUSED_OPS = ("copy_",)
