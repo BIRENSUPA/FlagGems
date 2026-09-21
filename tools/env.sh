@@ -39,6 +39,12 @@ case $BACKEND in
     # TODO: Check if this is necessary
     # export TRITON_ALL_BLOCKS_PARALLEL=1
     ;;
+  biren|biren-br2xx)
+    # The brsw_set_env.sh script is provided by the SUPA SDK
+    if [ -f /usr/local/birensupa/all/latest/scripts/brsw_set_env.sh ]; then
+      source /usr/local/birensupa/all/latest/scripts/brsw_set_env.sh
+    fi
+    ;;
   cambricon)
     export PATH=/usr/local/neuware/bin:$PATH
     export LD_LIBRARY_PATH=/usr/local/neuware/lib64:$LD_LIBRARY_PATH
@@ -103,12 +109,6 @@ case $BACKEND in
   thead)
     # The envsetup.sh is provided by the PPU SDK
     source /usr/local/PPU_SDK/envsetup.sh
-    ;;
-  biren)
-    # The brsw_set_env.sh script is provided by the SUPA SDK
-    if [ -f /usr/local/birensupa/all/latest/scripts/brsw_set_env.sh ]; then
-      source /usr/local/birensupa/all/latest/scripts/brsw_set_env.sh
-    fi
     ;;
   tsingmicro)
     export TX8_DEPS_ROOT=/opt/tx8_deps
